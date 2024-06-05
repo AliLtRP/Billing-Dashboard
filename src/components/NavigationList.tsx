@@ -4,54 +4,138 @@ import Wrapper from "./Wrapper";
 import { useState } from "react";
 
 const NavigationList = () => {
-  const [flag, setFlag] = useState<boolean>(false);
+  const [general, setGeneral] = useState<boolean>(false);
+  const [password, setPassword] = useState<boolean>(false);
+  const [invitations, setInvitations] = useState<boolean>(false);
+  const [billing, setBilling] = useState<boolean>(false);
+  const [apps, setApps] = useState<boolean>(false);
 
   return (
     <ul className="w-[80%] flex flex-col gap-5 items-start">
       <li className="flex w-full justify-start items-center gap-2">
-        <Wrapper className="w-[6px] h-full rounded-xl" />
         <Wrapper
-          handleClick={() => setFlag(!flag)}
+          className={`bg-[${
+            general ? "#EE4D38" : "#F8F8FF"
+          }] w-[6px] h-full rounded-xl`}
+        />
+        <Wrapper
+          handleClick={() => {
+            setGeneral(!general);
+            setPassword(false);
+            setInvitations(false);
+            setBilling(false);
+            setApps(false);
+          }}
           className="w-full basis-[90%] gap-2 flex items-center"
         >
-          <DoubleSquare color={flag ?? "#1A194D"} />
+          <DoubleSquare color={general ? "#1A194D" : "#62618F"} />
           <CustomTitle
             title="General"
-            className="text-[#62618F] text-sm font-light"
+            className={`text-[${
+              general ? "#1A194D" : "#62618F"
+            }] text-sm font-light`}
           />
         </Wrapper>
       </li>
       <li className="flex items-center gap-2">
-        <Wrapper className="w-[6px] h-full rounded-xl" />
-        <Lock />
-        <CustomTitle
-          title="Password"
-          className="text-[#62618F] text-sm font-light"
+        <Wrapper
+          className={`bg-[${
+            password ? "#EE4D38" : "#F8F8FF"
+          }] w-[6px] h-full rounded-xl`}
         />
+        <Wrapper
+          handleClick={() => {
+            setGeneral(false);
+            setPassword(!password);
+            setInvitations(false);
+            setBilling(false);
+            setApps(false);
+          }}
+          className="w-full basis-[90%] gap-2 flex items-center"
+        >
+          <Lock color={password ? "#1A194D" : "#62618F"} />
+          <CustomTitle
+            title="Password"
+            className={`text-[${
+              password ? "#1A194D" : "#62618F"
+            }] text-sm font-light`}
+          />
+        </Wrapper>
       </li>
       <li className="flex items-center gap-2">
-        <Wrapper className="w-[6px] h-full rounded-xl" />
-        <Mail color="#62618F" />
-        <CustomTitle
-          title="Invitations"
-          className="text-[#62618F] text-sm font-light"
+        <Wrapper
+          className={`bg-[${
+            invitations ? "#EE4D38" : "#F8F8FF"
+          }] w-[6px] h-full rounded-xl`}
         />
+        <Wrapper
+          handleClick={() => {
+            setGeneral(false);
+            setPassword(false);
+            setInvitations(!invitations);
+            setBilling(false);
+            setApps(false);
+          }}
+          className="w-full basis-[90%] gap-2 flex items-center"
+        >
+          <Mail color={invitations ? "#1A194D" : "#62618F"} />
+          <CustomTitle
+            title="Invitations"
+            className={`text-[${
+              invitations ? "#1A194D" : "#62618F"
+            }] text-sm font-light`}
+          />
+        </Wrapper>
       </li>
       <li className="flex items-center gap-2">
-        <Wrapper className="bg-[#EE4D38] w-[6px] h-full rounded-xl" />
-        <Billing color="#1A194D" />
-        <CustomTitle
-          title="Billing"
-          className="text-[#1A194D] text-sm font-light"
+        <Wrapper
+          className={`bg-[${
+            billing ? "#EE4D38" : "#F8F8FF"
+          }] w-[6px] h-full rounded-xl`}
         />
+        <Wrapper
+          handleClick={() => {
+            setGeneral(false);
+            setPassword(false);
+            setInvitations(false);
+            setBilling(!billing);
+            setApps(false);
+          }}
+          className="w-full basis-[90%] gap-2 flex items-center"
+        >
+          <Billing color={billing ? "#1A194D" : "#62618F"} />
+          <CustomTitle
+            title="Billing"
+            className={`text-[${
+              billing ? "#1A194D" : "#62618F"
+            }] text-sm font-light`}
+          />
+        </Wrapper>
       </li>
       <li className="flex items-center gap-2">
-        <Wrapper className="w-[6px] h-full rounded-xl" />
-        <Square size={25} color="#62618F" />
-        <CustomTitle
-          title="Apps"
-          className="text-[#62618F] text-sm font-light"
+        <Wrapper
+          className={`bg-[${
+            apps ? "#EE4D38" : "#F8F8FF"
+          }] w-[6px] h-full rounded-xl`}
         />
+        <Wrapper
+          handleClick={() => {
+            setGeneral(false);
+            setPassword(false);
+            setInvitations(false);
+            setBilling(false);
+            setApps(!apps);
+          }}
+          className="w-full basis-[90%] gap-2 flex items-center"
+        >
+          <Square size={25} color={apps ? "#1A194D" : "#62618F"} />
+          <CustomTitle
+            title="Apps"
+            className={`text-[${
+              apps ? "#1A194D" : "#62618F"
+            }] text-sm font-light`}
+          />
+        </Wrapper>
       </li>
     </ul>
   );

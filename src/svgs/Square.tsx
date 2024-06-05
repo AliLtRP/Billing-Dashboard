@@ -7,7 +7,7 @@ const SvgComponent = (props) => (
     {...props}
   >
     <g
-      stroke="#62618F"
+      stroke={props.color}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
