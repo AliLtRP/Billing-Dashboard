@@ -2,9 +2,10 @@ import CustomTitle from "./CustomTitle";
 import { Lock, Billing, Square, Mail, DoubleSquare } from "../svgs/index";
 import Wrapper from "./Wrapper";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const NavigationList = () => {
-  const [general, setGeneral] = useState<boolean>(false);
+  const [general, setGeneral] = useState<boolean>(true);
   const [password, setPassword] = useState<boolean>(false);
   const [invitations, setInvitations] = useState<boolean>(false);
   const [billing, setBilling] = useState<boolean>(false);
@@ -26,15 +27,17 @@ const NavigationList = () => {
             setBilling(false);
             setApps(false);
           }}
-          className="w-full basis-[90%] gap-2 flex items-center"
+          className="w-full basis-[90%] hover:cursor-pointer"
         >
-          <DoubleSquare color={general ? "#1A194D" : "#62618F"} />
-          <CustomTitle
-            title="General"
-            className={`text-[${
-              general ? "#1A194D" : "#62618F"
-            }] text-sm font-light`}
-          />
+          <Link to={"/general"} className="gap-2 flex items-center">
+            <DoubleSquare color={general ? "#1A194D" : "#62618F"} />
+            <CustomTitle
+              title="General"
+              className={`text-[${
+                general ? "#1A194D" : "#62618F"
+              }] text-sm font-light`}
+            />
+          </Link>
         </Wrapper>
       </li>
       <li className="flex items-center gap-2">
@@ -51,15 +54,17 @@ const NavigationList = () => {
             setBilling(false);
             setApps(false);
           }}
-          className="w-full basis-[90%] gap-2 flex items-center"
+          className="w-full basis-[90%]  hover:cursor-pointer"
         >
-          <Lock color={password ? "#1A194D" : "#62618F"} />
-          <CustomTitle
-            title="Password"
-            className={`text-[${
-              password ? "#1A194D" : "#62618F"
-            }] text-sm font-light`}
-          />
+          <Link to={"/password"} className="gap-2 flex items-center">
+            <Lock color={password ? "#1A194D" : "#62618F"} />
+            <CustomTitle
+              title="Password"
+              className={`text-[${
+                password ? "#1A194D" : "#62618F"
+              }] text-sm font-light`}
+            />
+          </Link>
         </Wrapper>
       </li>
       <li className="flex items-center gap-2">
@@ -76,15 +81,17 @@ const NavigationList = () => {
             setBilling(false);
             setApps(false);
           }}
-          className="w-full basis-[90%] gap-2 flex items-center"
+          className="w-full basis-[90%] gap-2 flex items-center hover:cursor-pointer"
         >
-          <Mail color={invitations ? "#1A194D" : "#62618F"} />
-          <CustomTitle
-            title="Invitations"
-            className={`text-[${
-              invitations ? "#1A194D" : "#62618F"
-            }] text-sm font-light`}
-          />
+          <Link to={"/invitations"} className="gap-2 flex items-center">
+            <Mail color={invitations ? "#1A194D" : "#62618F"} />
+            <CustomTitle
+              title="Invitations"
+              className={`text-[${
+                invitations ? "#1A194D" : "#62618F"
+              }] text-sm font-light`}
+            />
+          </Link>
         </Wrapper>
       </li>
       <li className="flex items-center gap-2">
@@ -101,15 +108,17 @@ const NavigationList = () => {
             setBilling(!billing);
             setApps(false);
           }}
-          className="w-full basis-[90%] gap-2 flex items-center"
+          className="w-full basis-[90%] gap-2 flex items-center hover:cursor-pointer"
         >
-          <Billing color={billing ? "#1A194D" : "#62618F"} />
-          <CustomTitle
-            title="Billing"
-            className={`text-[${
-              billing ? "#1A194D" : "#62618F"
-            }] text-sm font-light`}
-          />
+          <Link to={"/billing"} className="gap-2 flex items-center">
+            <Billing color={billing ? "#1A194D" : "#62618F"} />
+            <CustomTitle
+              title="Billing"
+              className={`text-[${
+                billing ? "#1A194D" : "#62618F"
+              }] text-sm font-light`}
+            />
+          </Link>
         </Wrapper>
       </li>
       <li className="flex items-center gap-2">
@@ -126,15 +135,17 @@ const NavigationList = () => {
             setBilling(false);
             setApps(!apps);
           }}
-          className="w-full basis-[90%] gap-2 flex items-center"
+          className="w-full basis-[90%] gap-2 flex items-center hover:cursor-pointer"
         >
-          <Square size={25} color={apps ? "#1A194D" : "#62618F"} />
-          <CustomTitle
-            title="Apps"
-            className={`text-[${
-              apps ? "#1A194D" : "#62618F"
-            }] text-sm font-light`}
-          />
+          <Link to={"/apps"} className="gap-2 flex items-center">
+            <Square size={25} color={apps ? "#1A194D" : "#62618F"} />
+            <CustomTitle
+              title="Apps"
+              className={`text-[${
+                apps ? "#1A194D" : "#62618F"
+              }] text-sm font-light`}
+            />
+          </Link>
         </Wrapper>
       </li>
     </ul>
