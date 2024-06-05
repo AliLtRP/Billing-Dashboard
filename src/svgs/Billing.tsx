@@ -1,4 +1,6 @@
-const SvgComponent = (props) => (
+import { Props } from "../types";
+
+const SvgComponent = (props: Props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="none">
     <g
       stroke={props.color}

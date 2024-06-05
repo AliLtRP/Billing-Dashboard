@@ -8,3 +8,7 @@ export interface CustomButtonProps {
   className?: string;
   onClick: () => void;
 }
+
+export interface Props {
+  color?: string;
+}

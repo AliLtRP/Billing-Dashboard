@@ -138,7 +138,7 @@ const NavigationList = () => {
           className="w-full basis-[90%] gap-2 flex items-center hover:cursor-pointer"
         >
           <Link to={"/apps"} className="gap-2 flex items-center">
-            <Square size={25} color={apps ? "#1A194D" : "#62618F"} />
+            <Square color={apps ? "#1A194D" : "#62618F"} />
             <CustomTitle
               title="Apps"
               className={`text-[${

@@ -6,7 +6,7 @@ const Wrapper: React.FC<{
   handleClick?: () => void;
 }> = ({ children, className, handleClick }) => {
   return (
-    <div className={className} onClick={() => handleClick()}>
+    <div className={className} onClick={() => handleClick!()}>
       {children}
     </div>
   );
