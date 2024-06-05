@@ -7,11 +7,12 @@ import LogOutNav from "./components/LogOutNav";
 import CustomTitle from "./components/CustomTitle";
 import OrderHistory from "./components/OrderHistory";
 import visa from "./assets/3e70a2c7dab9e8137f7a7e39f049e2e3.png";
+import CustomButton from "./components/CustomButton";
 
 function App() {
   return (
     <Wrapper className="w-[100vw] h-[100vh] flex">
-      <Wrapper className="w-full h-full flex flex-col items-center justify-start gap-10 pl-2 pt-16 pb-8 basis-[20%] bg-[#F8F8FF]">
+      <Wrapper className="w-full h-full flex flex-col items-center justify-start gap-10 pl-2 pt-10 pb-8 basis-[20%] bg-[#F8F8FF]">
         <Wrapper className="w-[80%] h-14 flex items-center gap-4">
           <img src={image} alt="user image" />
           <UserInfo />
@@ -23,44 +24,53 @@ function App() {
         <LogOutNav />
       </Wrapper>
 
-      <Wrapper className="w-[57%]  py-16 px-16 flex flex-col justify-between">
+      <Wrapper className="w-[57%]  py-10 px-16 flex flex-col justify-start gap-7">
         <CustomTitle title="Billing" className="text-3xl font-bold pt-2" />
 
-        <OrderHistory />
+        <Wrapper className="flex flex-col  pt-7 gap-8">
+          <OrderHistory />
 
-        <Wrapper className="w-full h-36">
-          <table className="table-auto">
-            <thead>
-              <tr className="h-8">
-                <th className="text-start">Song</th>
-                <th className="text-start">Artist</th>
-                <th className="text-start">Year</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="w-auto h-8">
-                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                <td>Malcolm Lockyer</td>
-                <td>
-                  <button>Download</button>
-                </td>
-              </tr>
-              <tr className="h-8">
-                <td>Witchy Woman</td>
-                <td>The Eagles</td>
-                <td>1972</td>
-              </tr>
-              <tr className="h-8">
-                <td>Shining Star</td>
-                <td>Earth, Wind, and Fire</td>
-                <td>1975</td>
-              </tr>
-            </tbody>
-          </table>
+          <Wrapper className="w-full h-auto min-h-36">
+            <table className="table-auto border-spacing-y-3.5 border-separate">
+              <thead>
+                <tr className="text-sm text-[#62618F]">
+                  <th className="text-start font-normal">Date</th>
+                  <th className="text-start font-normal">Type</th>
+                  <th className="text-start font-normal">Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="font-normal text-sm">
+                  <td className="w-52">Oct. 21, 2021</td>
+                  <td className="w-72">Pro Annual</td>
+                  <td className="w-auto">
+                    <CustomButton title="Download" onClick={() => {}} />
+                  </td>
+                </tr>
+                <tr className="font-normal text-sm">
+                  <td className="">July. 21, 2021</td>
+                  <td>Sponsored Post</td>
+                  <td>
+                    <CustomButton title="Download" onClick={() => {}} />
+                  </td>
+                </tr>
+                <tr className="font-normal text-sm">
+                  <td className="">Jun. 21, 2021</td>
+                  <td>Sponsored Post</td>
+                  <td>
+                    <CustomButton title="Download" onClick={() => {}} />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </Wrapper>
         </Wrapper>
 
-        <CustomTitle title="Load more" className=" underline text-[#EE4D38]" />
-        <Wrapper className="h-36">
+        <CustomTitle
+          title="Load more"
+          className="py-3 underline text-[#EE4D38]"
+        />
+        <Wrapper className="h-36 pt-2">
           <CustomTitle title="Payment Method" className="font-bold" />
           <CustomTitle
             title="Manage billing information and view receips"
@@ -79,13 +89,31 @@ function App() {
               />
             </Wrapper>
 
-            <Wrapper>sd</Wrapper>
+            <Wrapper>
+              <CustomButton title="Remove" className="" onClick={() => {}} />
+            </Wrapper>
           </Wrapper>
         </Wrapper>
       </Wrapper>
 
-      <Wrapper className="py-40 w-[20%] flex justify-start h-full">
-        <Wrapper className=" bg-[#EE4D38] w-64 h-56 rounded-3xl"></Wrapper>
+      <Wrapper className="py-[134px] w-[20%] flex justify-start h-full text-[#fff]">
+        <Wrapper className=" bg-[#EE4D38] w-[258px] h-[221px] rounded-3xl flex flex-col gap-4 p-8">
+          <CustomTitle title="Your plan" className="font-normal" />
+
+          <Wrapper>
+            <CustomTitle title="Pro Annual" className="font-bold text-2xl" />
+            <CustomTitle
+              title="Renews on  Nov. 2021"
+              className="text-sm font-normal"
+            />
+          </Wrapper>
+
+          <CustomButton
+            title="Cancel subscription"
+            className="text-[#fff] border-opacity-50 font-normal w-full"
+            onClick={() => {}}
+          />
+        </Wrapper>
       </Wrapper>
     </Wrapper>
   );

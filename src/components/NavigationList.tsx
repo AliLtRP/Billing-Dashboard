@@ -7,9 +7,9 @@ const NavigationList = () => {
   const [flag, setFlag] = useState<boolean>(false);
 
   return (
-    <ul className="w-[80%] flex flex-col gap-4 items-start">
+    <ul className="w-[80%] flex flex-col gap-5 items-start">
       <li className="flex w-full justify-start items-center gap-2">
-        <Wrapper className="bg-[#fff] w-[6px] h-full rounded-xl" />
+        <Wrapper className="w-[6px] h-full rounded-xl" />
         <Wrapper
           handleClick={() => setFlag(!flag)}
           className="w-full basis-[90%] gap-2 flex items-center"
@@ -22,7 +22,7 @@ const NavigationList = () => {
         </Wrapper>
       </li>
       <li className="flex items-center gap-2">
-        <Wrapper className="bg-[#fff] w-[6px] h-full rounded-xl" />
+        <Wrapper className="w-[6px] h-full rounded-xl" />
         <Lock />
         <CustomTitle
           title="Password"
@@ -30,7 +30,7 @@ const NavigationList = () => {
         />
       </li>
       <li className="flex items-center gap-2">
-        <Wrapper className="bg-[#fff] w-[6px] h-full rounded-xl" />
+        <Wrapper className="w-[6px] h-full rounded-xl" />
         <Mail color="#62618F" />
         <CustomTitle
           title="Invitations"
@@ -46,7 +46,7 @@ const NavigationList = () => {
         />
       </li>
       <li className="flex items-center gap-2">
-        <Wrapper className="bg-[#fff] w-[6px] h-full rounded-xl" />
+        <Wrapper className="w-[6px] h-full rounded-xl" />
         <Square size={25} color="#62618F" />
         <CustomTitle
           title="Apps"
